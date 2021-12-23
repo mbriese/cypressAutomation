@@ -10,5 +10,10 @@
   },
   "dependencies": {
     "jasmine": "^3.10.0"
+  },
+  
+    "scripts": {
+      "cypress:open": "cypress open"
+    }
   }
-}
+
