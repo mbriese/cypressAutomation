@@ -1,3 +1,4 @@
+/// < reference types = "Cypress" />
 // Cypress test spec //
 // Given ecommerce page
 // and searching for items described with text string = "ca"
