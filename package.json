@@ -3,10 +3,12 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
- 
   "author": "MindiBriese",
   "license": "ISC",
   "devDependencies": {
-    "cypress": ""
-   }
+    "cypress": "^9.2.0"
+  },
+  "dependencies": {
+    "jasmine": "^3.10.0"
+  }
 }
