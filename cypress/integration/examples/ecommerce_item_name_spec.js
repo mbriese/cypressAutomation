@@ -13,7 +13,7 @@ cy.wait(2000)
  
 //Parent child chaining
 cy.get('.products').as('productLocator')
-//Create an array where we can access the items and get text & test the string value
+//Create an array where we can access the items and get text &
 cy.get('@productLocator').find('.product').each(($el, index, $list) => {
  
 const textVeg=$el.find('h4.product-name').text()
