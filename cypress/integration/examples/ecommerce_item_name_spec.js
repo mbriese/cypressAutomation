@@ -3,7 +3,7 @@
 describe('My Second Test Suite', function() 
 {
  
-it('My FirstTest case',function() {
+it('will use parent child chaining to locate objects',function() {
  
  
 cy.visit("https://rahulshettyacademy.com/seleniumPractise/#/")
@@ -13,6 +13,7 @@ cy.wait(2000)
  
 //Parent child chaining
 cy.get('.products').as('productLocator')
+//Create an array where we can access the items and get text & test the string value
 cy.get('@productLocator').find('.product').each(($el, index, $list) => {
  
 const textVeg=$el.find('h4.product-name').text()
