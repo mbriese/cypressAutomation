@@ -1,33 +1,30 @@
 /// <reference types="Cypress" />
  
-describe('My Fourth Suite', function() 
+describe('My Fifth Test Suite', function() 
 {
  
-it('My FourthTest case',function() {
+it('My Fifth Test case',function() {
  
-//Switch to Alert buttons
+//Check boxes
 cy.visit("https://rahulshettyacademy.com/AutomationPractice/")
-  // Switch to Alert button with id 
-  cy.get('#alertbtn').click() // opens alert box and auto accepts confirm action //
-  cy.get('[value="Confirm"]').click()// opens confirmation dialog //
-
-  // did the text string match our expected value -- assertion from Mocha //
-  cy.on('window:alert', (str) => {
-      expect(str).to.equal('Hello , share this practice page and share your knowledge')
-  })
-  cy.on('window:confirm', (str) => {
-      expect(str).to.equal('Hello , Are you sure you want to confirm?')
-  })
-
-  // deal with child tabs - click on button & go to target = another location
-  // promotes flakiness in tests & cypress will not do that
-  cy.get('#opentab').invoke('removeAttr', 'target').click()
-
-  // check URL to make sure transition was successful
-  cy.url().should('include', 'rahulshettyacademy.com')
-
-  // navigation in browser
-  cy.go('back')
-}  )
-  
-}  )
+ 
+cy.get('tr td:nth-child(2)').each(($e1, index, $list) => {
+ 
+    const text=$e1.text()
+    if(text.includes("Python"))
+    {
+ 
+        cy.get("tr td:nth-child(2)").eq(index).next().then(function(price)
+        {
+         const priceText=   price.text()
+         expect(priceText).to.equal('25')
+        })
+    }
+ 
+})
+ 
+ 
+})
+ 
+ 
+})
